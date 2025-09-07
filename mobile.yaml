@@ -57,6 +57,7 @@ views:
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
+        use_light_color: true
       - type: custom:mushroom-light-card
         entity: light.signify_netherlands_b_v_lct014
         name: Living Room
@@ -64,6 +65,7 @@ views:
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
+        use_light_color: true
       - type: custom:mushroom-light-card
         entity: light.light_7
         name: Light 7
@@ -105,19 +107,14 @@ views:
     path: outlets
     title: Outlets
     cards:
-      - type: custom:button-card
+      - show_name: true
+        show_icon: false
+        type: button
+        icon: mdi:home
         name: Main Menu
         tap_action:
           action: navigate
           navigation_path: /dashboard-phone/main
-        show_state: false
-        styles:
-          card:
-            - width: 250px
-            - height: 50px
-            - border-radius: 10px
-            - font-size: 18px
-            - text-align: center
       - type: horizontal-stack
         cards:
           - type: custom:button-card
@@ -128,7 +125,7 @@ views:
             size: 40px
             styles:
               card:
-                - width: 120px
+                - width: 200px
                 - height: 100px
               name:
                 - font-size: 14px
@@ -144,7 +141,7 @@ views:
             size: 40px
             styles:
               card:
-                - width: 120px
+                - width: 200px
                 - height: 100px
               name:
                 - font-size: 14px
@@ -152,3 +149,4 @@ views:
                 - font-size: 12px
             tap_action:
               action: toggle
+
