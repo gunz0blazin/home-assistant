@@ -1,0 +1,154 @@
+
+views:
+  - type: masonry
+    path: main
+    title: Main
+    cards:
+      - show_name: true
+        show_icon: false
+        type: button
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-phone/lights_page
+        hold_action:
+          action: none
+        name: Lights
+        icon: mdi:lightbulb
+        show_state: true
+      - show_name: true
+        show_icon: false
+        type: button
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-phone/outlets
+        hold_action:
+          action: none
+        icon: mdi:power-plug
+        name: Outlets
+  - path: lights_page
+    title: Lights
+    cards:
+      - show_name: true
+        show_icon: false
+        type: button
+        icon: mdi:home
+        name: Main Menu
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-phone/main
+      - type: custom:mushroom-light-card
+        entity: light.light_5
+        name: Light 5
+        icon: mdi:lightbulb
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+      - type: custom:mushroom-light-card
+        entity: light.bedroom_lamp_2
+        name: Bedroom Lamp 2
+        icon: mdi:lamp
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+      - type: custom:mushroom-light-card
+        entity: light.bedroom_lamp_1
+        name: Bedroom Lamp 1
+        icon: mdi:lamp
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+      - type: custom:mushroom-light-card
+        entity: light.signify_netherlands_b_v_lct014
+        name: Living Room
+        icon: mdi:lamp
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+      - type: custom:mushroom-light-card
+        entity: light.light_7
+        name: Light 7
+        icon: mdi:lightbulb
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+      - type: custom:mushroom-light-card
+        entity: light.light_3
+        name: Light 3
+        icon: mdi:lightbulb
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+      - type: custom:mushroom-light-card
+        entity: light.stove_light
+        name: Stove Light
+        icon: mdi:lightbulb
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+      - type: custom:mushroom-light-card
+        entity: light.signify_netherlands_b_v_lst002
+        name: Signify Netherlands LST002
+        icon: mdi:lightbulb
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+      - type: custom:mushroom-light-card
+        entity: light.light_6
+        name: Light 6
+        icon: mdi:lightbulb
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+    type: masonry
+    subview: false
+  - type: masonry
+    path: outlets
+    title: Outlets
+    cards:
+      - type: custom:button-card
+        name: Main Menu
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-phone/main
+        show_state: false
+        styles:
+          card:
+            - width: 250px
+            - height: 50px
+            - border-radius: 10px
+            - font-size: 18px
+            - text-align: center
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            entity: switch.plug_2
+            name: Plug 2
+            icon: mdi:power-plug
+            show_state: true
+            size: 40px
+            styles:
+              card:
+                - width: 120px
+                - height: 100px
+              name:
+                - font-size: 14px
+              state:
+                - font-size: 12px
+            tap_action:
+              action: toggle
+          - type: custom:button-card
+            entity: switch.p1s
+            name: P1S
+            icon: mdi:power-plug
+            show_state: true
+            size: 40px
+            styles:
+              card:
+                - width: 120px
+                - height: 100px
+              name:
+                - font-size: 14px
+              state:
+                - font-size: 12px
+            tap_action:
+              action: toggle

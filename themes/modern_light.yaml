@@ -1,0 +1,31 @@
+bright_modern:
+  # Backgrounds
+  primary-background-color: "#f5f5f5"
+  secondary-background-color: "#ffffff"
+  card-background-color: "#ffffff"
+  sidebar-background-color: "#ffffff"
+  
+  # Text
+  primary-text-color: "#222222"
+  secondary-text-color: "#555555"
+  disabled-text-color: "#999999"
+  
+  # Accents
+  primary-color: "#6200ee"        # your main accent color
+  accent-color: "#03dac6"         # secondary accent
+  paper-item-icon-color: "#6200ee"
+  paper-item-icon-active-color: "#03dac6"
+  paper-card-header-color: "#6200ee"
+  paper-listbox-background-color: "#ffffff"
+  
+  # Switches & sliders
+  paper-toggle-button-checked-button-color: "#6200ee"
+  paper-toggle-button-checked-bar-color: "#03dac6"
+  paper-slider-active-color: "#6200ee"
+  
+  # Header / tabs
+  app-header-background-color: "#ffffff"
+  app-header-text-color: "#222222"
+  
+  # Borders
+  divider-color: "#dddddd"
