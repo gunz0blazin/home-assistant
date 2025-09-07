@@ -1,4 +1,3 @@
-
 views:
   - type: masonry
     path: main
@@ -38,21 +37,21 @@ views:
           navigation_path: /dashboard-phone/main
       - type: custom:mushroom-light-card
         entity: light.light_5
-        name: Light 5
         icon: mdi:lightbulb
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
+        name: Bathroom
       - type: custom:mushroom-light-card
         entity: light.bedroom_lamp_2
-        name: Bedroom Lamp 2
         icon: mdi:lamp
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
+        name: Front Door
       - type: custom:mushroom-light-card
         entity: light.bedroom_lamp_1
-        name: Bedroom Lamp 1
+        name: Bedroom
         icon: mdi:lamp
         show_brightness_control: true
         show_color_temp_control: true
@@ -60,43 +59,43 @@ views:
         use_light_color: true
       - type: custom:mushroom-light-card
         entity: light.signify_netherlands_b_v_lct014
-        name: Living Room
         icon: mdi:lamp
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
         use_light_color: true
+        name: Bedroom Color
       - type: custom:mushroom-light-card
         entity: light.light_7
-        name: Light 7
         icon: mdi:lightbulb
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
+        name: Bedroom Closet
       - type: custom:mushroom-light-card
         entity: light.light_3
-        name: Light 3
+        name: Kitchen
         icon: mdi:lightbulb
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
       - type: custom:mushroom-light-card
         entity: light.stove_light
-        name: Stove Light
+        name: Stove
         icon: mdi:lightbulb
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
       - type: custom:mushroom-light-card
         entity: light.signify_netherlands_b_v_lst002
-        name: Signify Netherlands LST002
+        name: TV Stand
         icon: mdi:lightbulb
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
       - type: custom:mushroom-light-card
         entity: light.light_6
-        name: Light 6
+        name: Hallway
         icon: mdi:lightbulb
         show_brightness_control: true
         show_color_temp_control: true
