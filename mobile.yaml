@@ -1,40 +1,28 @@
+
 views:
   - type: masonry
     path: main
     title: Main
     cards:
-      - show_name: true
-        show_icon: false
-        type: button
-        tap_action:
-          action: navigate
-          navigation_path: /dashboard-phone/lights_page
-        hold_action:
-          action: none
-        name: Lights
+      - type: custom:mushroom-vacuum-card
+        entity: vacuum.gary
+        primary_info: state
+      - type: custom:mushroom-light-card
+        entity: light.bedroom_lamp
+        icon: mdi:lamp
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+        use_light_color: true
+        name: Bedroom Lamp
+      - type: custom:mushroom-light-card
+        entity: light.light_panels_50_a2_10
+        name: Nanoleaf
         icon: mdi:lightbulb
-        show_state: true
-      - show_name: true
-        show_icon: false
-        type: button
-        tap_action:
-          action: navigate
-          navigation_path: /dashboard-phone/outlets
-        hold_action:
-          action: none
-        icon: mdi:power-plug
-        name: Outlets
-  - path: lights_page
-    title: Lights
-    cards:
-      - show_name: true
-        show_icon: false
-        type: button
-        icon: mdi:home
-        name: Main Menu
-        tap_action:
-          action: navigate
-          navigation_path: /dashboard-phone/main
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+        use_light_color: true
       - type: custom:mushroom-light-card
         entity: light.light_5
         icon: mdi:lightbulb
@@ -42,43 +30,10 @@ views:
         show_color_temp_control: true
         show_color_control: true
         name: Bathroom
-      - type: custom:mushroom-light-card
-        entity: light.bedroom_lamp_2
-        icon: mdi:lamp
-        show_brightness_control: true
-        show_color_temp_control: true
-        show_color_control: true
-        name: Front Door
-      - type: custom:mushroom-light-card
-        entity: light.bedroom_lamp_1
-        name: Bedroom
-        icon: mdi:lamp
-        show_brightness_control: true
-        show_color_temp_control: true
-        show_color_control: true
-        use_light_color: true
-      - type: custom:mushroom-light-card
-        entity: light.signify_netherlands_b_v_lct014
-        icon: mdi:lamp
-        show_brightness_control: true
-        show_color_temp_control: true
-        show_color_control: true
-        use_light_color: true
-        name: Bedroom Color
-      - type: custom:mushroom-light-card
-        entity: light.light_7
-        icon: mdi:lightbulb
-        show_brightness_control: true
-        show_color_temp_control: true
-        show_color_control: true
-        name: Bedroom Closet
-      - type: custom:mushroom-light-card
-        entity: light.light_3
-        name: Kitchen
-        icon: mdi:lightbulb
-        show_brightness_control: true
-        show_color_temp_control: true
-        show_color_control: true
+        visibility:
+          - condition: state
+            entity: light.light_5
+            state: 'on'
       - type: custom:mushroom-light-card
         entity: light.stove_light
         name: Stove
@@ -86,6 +41,21 @@ views:
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
+        visibility:
+          - condition: state
+            entity: light.stove_light
+            state: 'on'
+      - type: custom:mushroom-light-card
+        entity: light.light_3
+        name: Kitchen
+        icon: mdi:lightbulb
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+        visibility:
+          - condition: state
+            entity: light.light_3
+            state: 'on'
       - type: custom:mushroom-light-card
         entity: light.signify_netherlands_b_v_lst002
         name: TV Stand
@@ -93,6 +63,32 @@ views:
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
+        visibility:
+          - condition: state
+            entity: light.signify_netherlands_b_v_lst002
+            state: 'on'
+      - type: custom:mushroom-light-card
+        entity: light.bedroom_lamp_2
+        icon: mdi:lamp
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+        name: Front Door
+        visibility:
+          - condition: state
+            entity: light.bedroom_lamp_2
+            state: 'on'
+      - type: custom:mushroom-light-card
+        entity: light.light_7
+        icon: mdi:lightbulb
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+        name: Porch Light
+        visibility:
+          - condition: state
+            entity: light.light_7
+            state: 'on'
       - type: custom:mushroom-light-card
         entity: light.light_6
         name: Hallway
@@ -100,38 +96,20 @@ views:
         show_brightness_control: true
         show_color_temp_control: true
         show_color_control: true
-    type: masonry
-    subview: false
-  - type: masonry
-    path: outlets
-    title: Outlets
-    cards:
-      - show_name: true
-        show_icon: false
-        type: button
-        icon: mdi:home
-        name: Main Menu
-        tap_action:
-          action: navigate
-          navigation_path: /dashboard-phone/main
+        visibility:
+          - condition: state
+            entity: light.light_6
+            state: 'on'
+      - type: custom:mushroom-light-card
+        entity: light.dining_room
+        icon: mdi:lamp
+        show_brightness_control: true
+        show_color_temp_control: true
+        show_color_control: true
+        use_light_color: true
+        name: Dining Room
       - type: horizontal-stack
         cards:
-          - type: custom:button-card
-            entity: switch.plug_2
-            name: Plug 2
-            icon: mdi:power-plug
-            show_state: true
-            size: 40px
-            styles:
-              card:
-                - width: 200px
-                - height: 100px
-              name:
-                - font-size: 14px
-              state:
-                - font-size: 12px
-            tap_action:
-              action: toggle
           - type: custom:button-card
             entity: switch.p1s
             name: P1S
@@ -148,4 +126,74 @@ views:
                 - font-size: 12px
             tap_action:
               action: toggle
+          - type: custom:button-card
+            entity: switch.plug_2
+            name: Desk Fan
+            icon: mdi:power-plug
+            show_state: true
+            size: 40px
+            styles:
+              card:
+                - width: 200px
+                - height: 100px
+              name:
+                - font-size: 14px
+              state:
+                - font-size: 12px
+            tap_action:
+              action: toggle
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - show_state: false
+            show_name: false
+            camera_view: live
+            fit_mode: fill
+            type: picture-entity
+            entity: camera.living_room_camera_high_resolution_channel
+            camera_image: camera.living_room_camera_high_resolution_channel
+          - show_state: false
+            show_name: false
+            camera_view: live
+            fit_mode: fill
+            type: picture-entity
+            entity: camera.kitchen_camera_high_resolution_channel
+            camera_image: camera.kitchen_camera_high_resolution_channel
+          - show_state: false
+            show_name: false
+            camera_view: live
+            fit_mode: fill
+            type: picture-entity
+            entity: camera.front_door_live_view
+            camera_image: camera.front_door_live_view
+          - show_state: false
+            show_name: false
+            camera_view: live
+            fit_mode: fill
+            type: picture-entity
+            entity: sensor.greenhouse_last_activity
+            camera_image: camera.greenhouse_live_view
+    badges:
+      - type: entity
+        show_name: true
+        show_state: true
+        show_icon: true
+        entity: sensor.sun_next_setting
+      - type: entity
+        show_name: true
+        show_state: true
+        show_icon: true
+        entity: sensor.sun_next_rising
+      - type: entity
+        show_name: true
+        show_state: false
+        show_icon: true
+        entity: binary_sensor.gary_bin_full
+        color: red
+        show_entity_picture: false
+        visibility:
+          - condition: state
+            entity: binary_sensor.gary_bin_full
+            state: 'on'
 
